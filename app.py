@@ -8,6 +8,7 @@ Created on Sat Oct  3 23:24:16 2026
 import streamlit as st
 import re
 from datetime import datetime
+import speech_recognition as sr
 
 # =========================================================
 # HIFAZAT KP
