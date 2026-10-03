@@ -538,10 +538,7 @@ with tab1:
             )
 
         except Exception as e:
-
-            st.error(
-                f"Voice error: {e}"
-            )
+             st.error(f"Voice error: {type(e).__name__}:{e}")
     
 
     analyze_button = st.button(
