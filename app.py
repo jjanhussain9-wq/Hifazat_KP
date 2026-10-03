@@ -872,7 +872,7 @@ st.markdown(
     <b>Hifazat KP</b><br>
     AI Community Resilience & Emergency Action Platform<br>
     Prototype for KP Youth Innovation & Entrepreneurship Competition<br>
-    Creatted by Jan Hssain
+    Creatted by Jan Hssain & Hasan Riaz Dawar
     </div>
     """,
     unsafe_allow_html=True
