@@ -462,7 +462,6 @@ with tab1:
                 "High"
             ]
         )
-
     language = st.selectbox(
         "Language",
         [
@@ -481,6 +480,67 @@ with tab1:
         ),
         height=180
     )
+
+    # -------------------------
+    # VOICE INPUT
+    # -------------------------
+
+    voice_language = {
+        "English": "en-US",
+        "Urdu": "ur-PK",
+        "Pashto": "ps-PK"
+    }
+
+    st.markdown("### 🎤 Voice Input")
+
+    audio = st.audio_input(
+        f"🎤 Speak in {language}"
+    )
+
+    if audio is not None:
+
+        recognizer = sr.Recognizer()
+
+        try:
+
+            with sr.AudioFile(audio) as source:
+                audio_data = recognizer.record(source)
+
+            voice_text = recognizer.recognize_google(
+                audio_data,
+                language=voice_language[language]
+            )
+
+            st.success(
+                "Voice converted to text successfully."
+            )
+
+            description = voice_text
+
+            st.text_area(
+                "Voice Input",
+                value=voice_text,
+                height=120
+            )
+
+        except sr.UnknownValueError:
+
+            st.error(
+                "Sorry, I could not understand the voice."
+            )
+
+        except sr.RequestError:
+
+            st.error(
+                "Voice recognition service is currently unavailable."
+            )
+
+        except Exception as e:
+
+            st.error(
+                f"Voice error: {e}"
+            )
+    
 
     analyze_button = st.button(
         "🔎 Analyze Report",
