@@ -871,7 +871,8 @@ st.markdown(
     <div class="footer">
     <b>Hifazat KP</b><br>
     AI Community Resilience & Emergency Action Platform<br>
-    Prototype for KP Youth Innovation & Entrepreneurship Competition
+    Prototype for KP Youth Innovation & Entrepreneurship Competition<br>
+    Creatted by Jan Hssain
     </div>
     """,
     unsafe_allow_html=True
