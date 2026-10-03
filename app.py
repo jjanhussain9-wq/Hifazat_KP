@@ -9,6 +9,7 @@ import streamlit as st
 import re
 from datetime import datetime
 import speech_recognition as sr
+import io
 
 # =========================================================
 # HIFAZAT KP
@@ -504,7 +505,7 @@ with tab1:
 
         try:
 
-            with sr.AudioFile(audio) as source:
+            with sr.AudioFile(io.BytesIO(audio.getvalue())) as source:
                 audio_data = recognizer.record(source)
 
             voice_text = recognizer.recognize_google(
